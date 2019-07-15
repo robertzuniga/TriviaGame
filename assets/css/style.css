@@ -1,0 +1,40 @@
+/* Robert Zuniga */
+
+
+
+#wrapper {
+    width: 500px;
+    margin: 50 px auto 0;
+    background: lightskyblue;
+    
+}
+
+#display {
+    font-family: monospace;
+    font-size: 20px;
+    color: darkblue;
+
+    text-align: center;
+    background: lightgrey;
+}
+
+#buttons {
+    text-align: center;
+}
+
+button {
+    width: 100 px;
+    height: 50 px auto 0;
+
+}
+
+#q-a-space {
+    width: 100%;
+    height: auto;
+
+    margin-top: 20 px;
+    overflow: auto;
+    text-align: center;
+    background: greenyellow;
+    
+}
