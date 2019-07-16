@@ -2,20 +2,41 @@
 
 
 
-#wrapper {
+.container {
     width: 500px;
-    margin: 50 px auto 0;
-    background: lightskyblue;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin-left: auto;
+    background: lightyellow;
+    border-style: solid;
+    border-color:black;
     
 }
 
-#display {
-    font-family: monospace;
+.card{
+    margin-bottom: 50px;
+    background-color:transparent !important;
+    border: 0px;
+    
+}
+
+.jumbotron{
+ /* color: #FFFFFF; */
+ background-color:transparent !important;
+} 
+#display-time {
+    font-family: monospace; 
     font-size: 20px;
     color: darkblue;
-
     text-align: center;
-    background: lightgrey;
+    /* background: lightgrey; */
+    /* background: lightyellow; */
+    
+}
+
+#timeRemaining{
+    justify-content: center;
 }
 
 #buttons {
@@ -35,6 +56,7 @@ button {
     margin-top: 20 px;
     overflow: auto;
     text-align: center;
-    background: greenyellow;
+    /* background: orange; */
+    /* background: lightyellow; */
     
 }

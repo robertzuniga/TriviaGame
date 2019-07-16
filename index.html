@@ -1,91 +1,83 @@
-<!-- Robert Zuniga -->
+<!-- Robert Zuniga Totally Trivial Trivia-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Robert Zuniga</title>
-    <link rel="stylesheet" type="test/css" href="assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Totally Trivial Trivia</title>
+  <link rel="stylesheet" type="test/css" href="assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    <link rel="stylesheet" 
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
-    crossorigin="anonymous"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <!-- Bootstrap -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Javascript -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
 
-    <script src="assets/javascript/app.js"></script>
+  <script src="assets/javascript/javascript.js"></script>
 
 </head>
 
 <body>
 
-    <div id="wrapper">
-        
-        
-        <div id ="display">
-                <h1> Totally Trivial Trivia </h1>
-                <p>Time Remaining: 00:00</p>
-        </div>
+  <div class="container">
+     
+    <br>
 
-        <div id="buttons">
-            <button id="start">start</button>
-        </div>
-
-        <div id = "q-a-space"></div>
-
+    <!-- Jumbotron Title -->
+    <div class="jumbotron ">
+       
+      <h1 class="text-center">Totally Trivial Trivia!</h1>
     </div>
 
-
-
-
-
-
-    <div class="container"> <!-- big container -->
-        <h1 id="timer">0</h1>
-
-        <div id="question1" class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-secondary active">
-                <input type="radio" name="options" id="option1" autocomplete="off" checked value="Toledo">Toledo 
-            </label>
-            <label class="btn btn-secondary">
-                <input type="radio" name="options" id="option2" autocomplete="off" value="New York">New York
-            </label>
-            <label class="btn btn-secondary">
-                <input type="radio" name="options" id="option3" autocomplete="off" value="Orlando">Orlando
-            </label>
-        </div>
-
+    <div id="buttons">
+      <p> <input id="start-button" type="submit" value="Start"></p>
     </div>
 
+    <!-- <button id="start-button" class="btn btn-primary start"  value="Start"><spanStart</button>; -->
 
-      <div class="container">
-        <h2>Form control: inline radio buttons</h2>
-        <p>The form below contains three inline radio buttons:</p>
-        <form>
-          <label class="radio-inline">
-            <input type="radio" name="optradio" checked>Option 1 </label>
-          <label class="radio-inline">
-            <input type="radio" name="optradio"> Option 2 </label>
-          <label class="radio-inline">
-            <input type="radio" name="optradio"> Option 3 </label>
-        </form>
+    <div class="row text-center" id="timeRemaining">
+      <!-- <div class="col text-center"> -->
+      <div id="display-time">
+        <p>Time Remaining: 00:00</p>
       </div>
-      
+      <!-- </div> -->
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div id="q-a-space">
+          <span>Which of the selection provide answer? </span>
+
+          <div class="card">
+            <h2>Question 1</h2>
+            <p>Which of the following answer is correct?</p>
+            <form>
+              <label class="radio-inline">
+                <input type="radio" name="optradio" checked>Option 1 </label>
+              <input type="radio" name="optradio" checked>Option 2 </label>
+              <input type="radio" name="optradio" checked>Option 3 </label>
+              <input type="radio" name="optradio" checked>Option 4 </label>
+              <label class="radio-inline">
+          </div>
+
+        </div> <!-- end q-a-space-->
+      </div> <!-- end col -->
+    </div> <!-- end row -->
+
+
+    <!--  -->
+
+
+
+
+  </div>
 </body>
-<!-- JQuery Call-->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" 
-   crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-   integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-   crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-   crossorigin="anonymous"></script>
 
 </html>

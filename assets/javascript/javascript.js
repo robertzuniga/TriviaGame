@@ -32,19 +32,9 @@ var showQuestions;
 var count = 0;
 
 
-
-
-
-
-
-
-
-
-
 function startMyTimer() {
     myTimer=setInterval(showQuestions, 2000);
 }
-
 
 function stopMyTimer() {
     clearInterval(showQuestions);
@@ -53,7 +43,6 @@ function stopMyTimer() {
 function displaySplashScreen() {
 
     
-
 }
 
 displaySplashScreen();
