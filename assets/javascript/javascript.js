@@ -1,4 +1,4 @@
-// Robert Zuniga
+// Robert Zuniga Trivia javascript
 console.log('TEST TEST TEST');
 
 var myQuestionAnswer = [{
