@@ -10,41 +10,50 @@
     margin-left: auto;
     background: lightyellow;
     border-style: solid;
-    border-color:black;
-    
+    border-color: black;
+
 }
 
-.card{
+.card {
     margin-bottom: 50px;
-    background-color:transparent !important;
+    background-color: transparent !important;
     border: 0px;
-    
+
 }
 
-.jumbotron{
- /* color: #FFFFFF; */
- background-color:transparent !important;
- padding-top: 0%;
- padding-bottom: 0%;
- padding-left: 0%;
- padding-right: 0%;
+.jumbotron {
+    /* color: #FFFFFF; */
+    background-color: transparent !important;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
 
-} 
+}
+
 #display-time {
-    font-family: monospace; 
+    font-family: monospace;
     font-size: 20px;
     color: darkblue;
     text-align: center;
     /* background: lightgrey; */
     /* background: lightyellow; */
 }
+
 h4 {
 
     padding-top: 2%;
     padding-bottom: 2%;
 }
 
-#timeRemaining{
+p {
+
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-weight: bolder;
+}
+
+#timeRemaining {
     padding-top: 5%;
     justify-content: center;
     font-weight: bolder;
@@ -53,6 +62,10 @@ h4 {
 #myButtons {
     text-align: center;
 }
+/* 
+#list-group-item {
+    background-color: transparent !important;
+} */
 
 /* button {
     width: 100 px;
@@ -68,5 +81,5 @@ h4 {
     text-align: center;
     /* background: orange; */
     /* background: lightyellow; */
-    
+
 }
