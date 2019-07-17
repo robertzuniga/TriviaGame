@@ -1,112 +1,67 @@
 <!-- Robert Zuniga  Trivia html-->
-<!DOCTYPE html>
-<html lang="en">
+
+<html lang="en-us">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Totally Trivial Trivia</title>
-  <link rel="stylesheet" type="test/css" href="./assets/css/reset.css">
-
-
-  <!-- <script src="https://kit.fontawesome.com/a837867605.js"></script> -->
-
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simpsons Trivia</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
 
   <div class="container">
-
-    <br>
-
-    <!-- Jumbotron Title -->
-    <div class="jumbotron ">
-
-      <h1 class="text-center">Totally Trivial Trivia!</h1>
-    </div>
-
-    <div id="myButtons">
-      <!-- <button type="submit" value=" Send" class="btn btn-success" id="submit" > -->
-      <button type="button" class="btn btn-success" id="submit">Start</button>
-      <!-- <input type="submit" id="submit-btn"></input> -->
-      <!-- <button id="myStartButton">
-              <h2>ReStart</h2>
-          </button> -->
-      <!-- <p> <input id="start-button" type="submit" value="Start"></p> -->
-    </div>
-
-    <!-- <button id="start-button" class="btn btn-primary start"  value="Start"><spanStart</button>; -->
-
-    <div class="row text-center" id="timeRemaining">
-      <!-- <div class="col text-center"> -->
-      <div id="display-time">
-        <p>Time Remaining: 5 s</p>
-      </div>
-      <!-- </div> -->
-    </div>
-
-
-
     <div class="row">
-      <div class="col">
-        <div id="q-a-space">
-          <div class="card">
+      <div class="col-md-12 text-center">
 
-            <div class="questionsHere">
-
-              <!-- Group of default radios - option 1 -->
-              <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" id="answerA" name="groupOfDefaultRadios">
-                <label class="custom-control-label" for="answerA">Option 1</label>
-              </div>
-
-              <!-- Group of default radios - option 2 -->
-              <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" id="answerB" name="groupOfDefaultRadios">
-                <label class="custom-control-label" for="answerB">Option 2</label>
-              </div>
-
-              <!-- Group of default radios - option 3 -->
-              <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" id="answerC" name="groupOfDefaultRadios">
-                <label class="custom-control-label" for="answerC">Option 3</label>
-              </div>
-
-
-            </div>
-          </div>
-
-        </div> <!-- end q-a-space-->
-      </div> <!-- end col -->
-    </div> <!-- end row -->
-
-
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <!-- Bootstrap -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Javascript -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
-
-    <!-- <link rel="stylesheet" href="bootstrap-checkbox-radio-list-group-item.min.css"> -->
-
-
-
-
-
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-
-    <script src="./assets/javascript/javascript.js"></script>
-
-
+        <h1 class="display-3">Trivia Game</h1>
+        <div>
+          <h3 id="timer"></h3>
+        </div>
+      </div>
+      <hr>
+    </div>
   </div>
+
+  <div class="row">
+
+    <div class="col-md-12 text-center">
+      <div id="start-page" class="start-page-text">
+        <h2>Let's Get Started</h2>
+        <p>Answer questions in the time alloted</p>
+        <div class="btn btn-primary" id="start-button">Start
+        </div>
+      </div>
+
+      <div>
+        <div id="questions-box">
+        </div>
+      </div>
+
+      <div class="hidden" id="end-page">
+        <h2>Here are your scores:</h2>
+        <p id="correct-answers"></p>
+        <p id="incorrect-answers"></p>
+        <p id="unanswered"></p>
+      </div>
+
+
+    </div>
+
+    <footer class="footer">
+      <div class="container-fluid">
+        <hr>
+        <span class="text-center">
+          <hr>
+        </span>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/javascript.js"></script>
 </body>
 
 </html>

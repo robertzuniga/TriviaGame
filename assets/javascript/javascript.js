@@ -1,94 +1,145 @@
 // Robert Zuniga Trivia javascript
 console.log('TEST TEST TEST');
+$(document).ready(function () {
+    // start the game when user clicks on Start button
+    $("#start-button").on("click", gameState.startTimer);
+});
 
-// window.onload=function() {
-//     $("#myStartButton").on("click", console.log("click works"));
-//     console.log("here");
-// };
-// $('#submit').on("click", (event) => {
-//     displayConsoleLog();
-//     return false;
-// }
-// );
+// information about the state of game play
 
-$("#submit").click(displayConsoleLog);
+var gameState = {
+    // set the time at 60 seconds, and count down by 1 second
+    timeRemaining: 10,
 
-var myQuestionAnswer = [{
-        myQuestion: "Question 0",
-        mySelectionA: "Answer A0",
-        mySelectionB: "Answer B0",
-        mySelectionC: "Answer C0",
-        myAnswer: "mySelectionA"
+    // start the timer, hide the start page, show the questions
+
+    startTimer: function () {
+        $("#timer").text("Time remaining: " + gameState.timeRemaining);
+        setInterval(gameState.countdown, 1000);
+        $("#start-page").hide();
+        trivia.displayQuestions();
     },
-    {
-        myQuestion: "Question 1",
-        mySelectionA: "Answer A1",
-        mySelectionB: "Answer B1",
-        mySelectionC: "Answer C1",
-        myAnswer: "mySelectionB"
+
+    // decrement the timer and update the UI; stop the timer at 0
+
+    countdown: function () {
+
+        gameState.timeRemaining--;
+        $("#timer").text("Time remaining: " + gameState.timeRemaining);
+
+        if (gameState.timeRemaining === 0) {
+            gameState.stopTimer();
+            $("#timer").empty();
+        }
     },
-    {
-        myQuestion: "Question 2",
-        mySelectionA: "Answer A2",
-        mySelectionB: "Answer B2",
-        mySelectionC: "Answer C2",
-        myAnswer: "mySelectionC"
+
+    // stop the timer and check the answers
+
+    stopTimer: function () {
+        clearInterval();
+        trivia.checkAnswers();
+    },
+
+    // hide the quetions and display the end page with results
+
+    showEndPage: function (numCorrect, numIncorrect, numUnanswered) {
+        $("#end-page").show();
+        $("#questions-box").empty();
+        $("#timer").empty();
+        $("#timer").hide();
+
+        $("#correct-answers").text("Correct: " + numCorrect);
+        $("#incorrect-answers").text("Incorrect: " + numIncorrect);
+        $("#unanswered").text("Not Answered: " + numUnanswered);
     }
-];
-
-// #questionsHere
-
-
-function displayConsoleLog() {
-    // event.preventDefault();
-     //event.stopPropagation();
- 
-     var splashscreen;
-     var showQuestions;
-     var count = 5;
- 
-     console.log("count ==> ", count)
- 
-    var done = startMyTimer(5);
- 
-     console.log("done =>", done)  
- } 
- 
-function startMyTimer(secondTic) {
-    var  mySecondTic = secondTic;
-    var timeUP = false;
-    var myTimer = setInterval(function () {
-            console.log("myTimer ==> ", mySecondTic);
-            $("#display-time").html("Time Remaining: " + mySecondTic +" s");
-
-            if (timeUP === true) {
-                clearInterval(myTimer);
-                clearTimeout(myTimer);
-                $("#display-time").html("Time Remaining: " + mySecondTic +" s");
-                // $("#display-time").empty();
-            } else if (mySecondTic == 0) {
-                // secondTic = 5;
-                timeUP = true;
-            } else {
-                mySecondTic--;
-            }
-
-//do stuff here
-
-
-
-
-
-
-
-
-
-            console.log("secondTic => ", mySecondTic)
-        }, 1000);
-
-
-
-
-    return timeUP;
 }
 
+// functions to handle the building questions page and scoring
+
+var trivia = {
+
+    // pull questions from the array of questions, loop through them, and append to UI
+
+    displayQuestions: function () {
+
+        var divContainer = $("#questions-box");
+
+        var answerGroup = $(".form-check");
+
+        divContainer.append('<h2>Answer the following questions:</h2>');
+
+        for (var i = 0; i < questionBank.length; i++) {
+
+            divContainer.append('<div id="question">' + questionBank[i].question + '</div>');
+
+            var answer1 = questionBank[i].answers[0];
+
+            var answer2 = questionBank[i].answers[1];
+
+            var answer3 = questionBank[i].answers[2];
+
+            divContainer.append('<div class="form-check"><input class="form-check-input" type="radio" name="radio-group' + i + '" id="radio' + i + '"><label class="form-check-label" id="radio' + i + 'label" for="radio' + i + '">' + answer1 + '</label></div>');
+
+            divContainer.append('<div class="form-check"><input class="form-check-input" type="radio" name="radio-group' + i + '" id="radio' + i + '"><label class="form-check-label" id="radio' + i + 'label" for="radio' + i + '">' + answer2 + '</label></div>');
+
+            divContainer.append('<div class="form-check"><input class="form-check-input" type="radio" name="radio-group' + i + '" id="radio' + i + '"><label class="form-check-label" id="radio' + i + 'label" for="radio' + i + '">' + answer3 + '</label></div>');
+        }
+
+        // add a Done button to the end of the page and register its click handler
+
+        var doneButton = '<button class="btn btn-primary" id="done-button" type="submit">Done</button>';
+
+        divContainer.append(doneButton);
+
+        $("#done-button").on("click", gameState.stopTimer);
+    },
+
+    // test if the user answers are correct, incorrect, or if there are unanswered questions
+
+    checkAnswers: function () {
+
+        var correctAnswer;
+        var userAnswer;
+        var numCorrect = 0;
+        var numIncorrect = 0;
+        var numUnanswered = 0;
+
+        // loop through to compare the text of the label with the user answer
+        // increment score counts appropriately
+
+        for (var i = 0; i < questionBank.length; i++) {
+
+            correctAnswer = questionBank[i].correct;
+            userAnswer = $('input[id=radio' + i + ']:checked + label').text();
+
+            if (userAnswer === correctAnswer) {
+                numCorrect++;
+            } else if (userAnswer === "") {
+                numUnanswered++;
+            } else if (userAnswer !== correctAnswer) {
+                {
+                    numIncorrect++;
+                }
+            }
+        }
+        // show the end page with the score tally
+        gameState.showEndPage(numCorrect, numIncorrect, numUnanswered);
+    },
+}
+
+// array of objects with the questions, possible answers, and the correct answer
+
+var questionBank =
+
+    [
+        {
+            question: "Which one is NOT a primary color",
+            answers: ["red", "orange", "blue"],
+            correct: "orange"
+        },
+        {
+            question: "Which is the state of the sun",
+            answers: ["liquid", "gas", "plasma"],
+            correct: "plasma"
+        },
+    ]
