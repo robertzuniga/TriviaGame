@@ -6,8 +6,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Totally Trivial Trivia</title>
-  <link rel="stylesheet" type="test/css" href="assets/css/reset.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="test/css" href="./assets/css/reset.css">
+
 
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -21,23 +21,29 @@
   </script>
 
   <script src="assets/javascript/javascript.js"></script>
-
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
 
 <body>
 
   <div class="container">
-     
+
     <br>
 
     <!-- Jumbotron Title -->
     <div class="jumbotron ">
-       
+
       <h1 class="text-center">Totally Trivial Trivia!</h1>
     </div>
 
-    <div id="buttons">
-      <p> <input id="start-button" type="submit" value="Start"></p>
+    <div id="myButtons">
+      <button id="myStartButton">
+        <h2>Start</h2>
+      </button>
+      <!-- <button id="myStartButton">
+              <h2>ReStart</h2>
+          </button> -->
+      <!-- <p> <input id="start-button" type="submit" value="Start"></p> -->
     </div>
 
     <!-- <button id="start-button" class="btn btn-primary start"  value="Start"><spanStart</button>; -->
@@ -50,13 +56,13 @@
       <!-- </div> -->
     </div>
 
+
+
     <div class="row">
       <div class="col">
         <div id="q-a-space">
-          <span>Which of the selection provide answer? </span>
-
           <div class="card">
-            <h2>Question 1</h2>
+            <h4>Question 1</h4>
             <p>Which of the following answer is correct?</p>
             <form>
               <label class="radio-inline">

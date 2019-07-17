@@ -24,6 +24,11 @@
 .jumbotron{
  /* color: #FFFFFF; */
  background-color:transparent !important;
+ padding-top: 0%;
+ padding-bottom: 0%;
+ padding-left: 0%;
+ padding-right: 0%;
+
 } 
 #display-time {
     font-family: monospace; 
@@ -32,22 +37,27 @@
     text-align: center;
     /* background: lightgrey; */
     /* background: lightyellow; */
-    
+}
+h4 {
+
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 #timeRemaining{
+    padding-top: 5%;
     justify-content: center;
+    font-weight: bolder;
 }
 
-#buttons {
+#myButtons {
     text-align: center;
 }
 
-button {
+/* button {
     width: 100 px;
     height: 50 px auto 0;
-
-}
+} */
 
 #q-a-space {
     width: 100%;

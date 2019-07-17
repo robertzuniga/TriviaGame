@@ -30,11 +30,25 @@ var myTimer;
 var showQuestions;
 
 var count = 0;
-
+var timeUP = false;
 
 function startMyTimer() {
-    myTimer=setInterval(showQuestions, 2000);
+    var secondTic = 5;
+    var myTimer = setInterval(function () {
+            secondTic--;
+            console.log("myTimer ==> ", secondTic);
+            $("#display-time").html("Time Remaining: " + secondTic);
+
+            if (timeUP === true) {
+                clearInterval(myTimer);
+                clearTimeout(myTimer);
+                $("#display-time").empty();
+            } else if (secondTic == 0) {
+                secondTic = 15;
+            } // end if
+        }, 1000);
 }
+
 
 function stopMyTimer() {
     clearInterval(showQuestions);
@@ -42,7 +56,7 @@ function stopMyTimer() {
 
 function displaySplashScreen() {
 
-    
+
 }
 
 displaySplashScreen();
